@@ -7,4 +7,6 @@ Goals:
 
 Section 1, Public Advice, gives the advice of an EU governing institution, which is European Commission, having included practical information to keep people healthy against Coronavirus. 
 
-Section 2, ...
+Section 2, Myth Busters, gives facts against myths and misconceptions in relation to Coronavirus, which is published by World Health Organization (WHO).
+
+Section 3, ...
