@@ -1,7 +1,9 @@
 # NLP_coronavirus_project
 ## Part II: AUTOMATIC WEB-SCRAPING AND TEXT SUMMARIZATION
 
+
 1. INTRODUCTION
+
 
 This part of the Deeplo AI-NLP project uses Natural Language Processing techniques and the Python Programming language as well as related libraries to accomplish an automatic web scraping and text summarization task. It collects and processes data about COVID-19 from publicly available sources in order to provide advice for public and enable them to easily follow news and important issues around the pandemic.  
 
@@ -23,9 +25,12 @@ Furthermore, the project updates the data and repeats its processes every day fo
 
 •	Finally, National News enables users to follow incidents in which the Coronavirus subject is mentioned in news being published by three web sites of the media, which are AD, NU and Telegraaf. These are chosen as they are known to be among the most visited news web sites in the Netherlands, according to top sites rankings, being found after a google search. Having accessed these news, through use of a translation tool, the section also provides an English version of the news titles and their short summaries as they are published in the original source in the Dutch language.
 
+
 2. METHODS
 
+
 2.1. Tools
+
 The project uses Python as the primary language for all implementations, and uses the following libraries: 
 •	Python’s threading module with the Timer() class for automatically updating the data and repeating all procedures
 •	Requests, for accessing web-pages
@@ -35,16 +40,19 @@ The project uses Python as the primary language for all implementations, and use
 •	Pandas, for handling data through use of data frames and saving them as csv files as well as reading data from HTML pages
 
 2.2. Data Collection/Web-scraping: Overview
+
 The qualitative data set of COVID-19, including all sections, has been collected through web-scraping with the BeautifulSoup library, HTML and XML parsers from several web-sites of trusted sources and the news media. These are: https://ec.europa.eu/, to access public advice of the European Commission; https://www.who.int/, for facts against myths and misconceptions, for public speeches of the general director of the World Health Organization (WHO), and for global news and events; https://www.ecdc.europa.eu/, for Rapid Risk Assessment Reports of the European Centre for Disease Prevention and Control (ECDC), and for global news and events; https://www.ad.nl/, https://www.nu.nl/, and https://www.telegraaf.nl, for national Dutch news.
 
 The data has been stored with use of the 'pandas.to_csv()' function and google drive. Google Colab has been used for the processing of the data as well as for the creation of the text summary tool mentioned below. Details of the procedures have been described in each section.
 
 2.3. Text-summarization 
+
 This study follows the extractive approach and uses the term frequency technique as it seems more cost effective and adequate enough for the objective of the study. It achieves to produce topic relevant sentences for users, through extracting the most important sentences from single documents, namely: (1) a 1-2 pages long executive summaries of formal reports, and (2) opening remarks at media briefings. The process does not require human judgement or understanding of meanings of words, but relies on statistical significance. 
 
 The importance of sentences in this study is determined based on word frequency scores. The score for each word is calculated by the number of its repetition in the given text. It means that the more frequently the word repeats itself in the text, the higher the score will be. Then, mathematically adding these frequency scores for words those appear in a sentence yields to sentence scores. As a result of this calculation, sentences which include words that have the highest word frequency scores in total also have the highest sentence scores, and therefore, are determined as the most important sentences of the text.
 
 2.3.2. Creation of the text summarization tool
+
 The text summarization tool of this study is created with the following procedures: 
 
 Data pre-processing:
