@@ -32,12 +32,19 @@ Furthermore, the project updates the data and repeats its processes every day fo
 2.1. Tools
 
 The project uses Python as the primary language for all implementations, and uses the following libraries: 
+
 •	Python’s threading module with the Timer() class for automatically updating the data and repeating all procedures
+
 •	Requests, for accessing web-pages
+
 •	BeautifulSoup, for web-scraping and accessing texts
+
 •	Regular Expression Operations (RE), for data cleaning 
+
 •	Natural Language Toolkit (NLTK), for processing texts, e.g., tokenization of words and sentences, for excluding stopwords, and for POS-tagging and stemming of words
+
 •	Pandas, for handling data through use of data frames and saving them as csv files as well as reading data from HTML pages
+
 
 2.2. Data Collection/Web-scraping: Overview
 
