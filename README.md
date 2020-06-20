@@ -56,15 +56,18 @@ The importance of sentences in this study is determined based on word frequency 
 The text summarization tool of this study is created with the following procedures: 
 
 Data pre-processing:
+
 The algorithm begins with cleaning the text, which is received through web-scraping process of this project. Removing square brackets is necessary to get rid of references in the text. Cleaning also involves removing of extra spaces, special characters and digits. Regular Expression has been used to clean the data and the cleaned text is stored for the calculation of word frequencies.
 
 Calculation of word frequencies:
+
 The cleaned text, first of all, is tokenized through use of NLTK’s word tokenizer in order to assign integer values to the each word. Second, nouns and verbs are identified through use of ‘part-of-speech-tagging’ (POS-tagging) of NLTK, in order to count only these words for the frequency calculation, as these types of words are most likely to give concepts of the topic. The tagging process attaches each word a POS-tag automatically, indicating whether the word is noun, verb, adverb, adjective, preposition, conjunction, etc . For the purpose of this study, only the words tagged with the following ones are retained for further processing: "NN" (singular noun), "NNP" (proper noun), "NNS" (plural noun), "VB" (base form of verb), "VBD" (past tense of verb), "VBG" (gerund/present participle form of verb), "VBN" (past participle .of verb), "VBP" (singular present tense of verb), and "VBZ" (singular present tense of verb, 3rd person). These types of words are apparently sufficient to help identifying sentences that are more informative about the topic. 
 Third, using NLTK’s stopword function, stop-words are filtered out, which are the most frequently used words, such as ‘what’, ‘for’, ‘is’, ‘at’ , ‘on’, ‘the’, and so on, but do not bear much meaning compared to the other types of words in English. Fourth, using NLTK’s PorterStemmer functions, the stem form of each word is obtained in order identify their exact repetition. 
 
 Finally, the frequency of each word is calculated through counting it’s repetition in the whole text and the raw number of the sum is stored in a dictionary. This is named as the ‘frequency table’. In the dictionary, words are keys and raw numbers of the frequency are corresponding values of these keys.
 
 Calculation of sentence scores:  
+
 The algorithm, at this stage, using NLTK’s sent_tokenizer(), tokenizes the sentences of the original text, instead of the cleaned version of it, in order to be able to assign values for each sentence.  Then it splits each sentence into their words, using the word tokenizer.
 
 The algorithm disregards very long sentences to avoid hardly readable sentences in the summaries. Similarly one or two words sentences do not make sense in a summary. Therefore, only sentences those having higher than 2 words and those having less than 70 words are processed for scoring. 
@@ -76,4 +79,5 @@ Thus the weighted score of the sentence is calculated through the formula of:
                     weighted sentence score = sum of word frequencies of the sentence / number of words
 
 Obtaining the summary: 
+
 As the length varies across texts of this study, putting a limit in ratio results in different lengths of summaries, which is determined by the number of sentences or words of the texts. In order to obtain an average length of summary, the algorithm chooses to give a summary with top ‘3’ sentences. To select these sentences, the algorithm orders the sentences according to their scores and selects the ones with the highest scores. Then it returns these sentences in their original order taken from the list of sentences of the original text. 
