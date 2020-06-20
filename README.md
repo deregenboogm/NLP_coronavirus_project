@@ -24,6 +24,7 @@ Furthermore, the project updates the data and repeats its processes every day fo
 •	Finally, National News enables users to follow incidents in which the Coronavirus subject is mentioned in news being published by three web sites of the media, which are AD, NU and Telegraaf. These are chosen as they are known to be among the most visited news web sites in the Netherlands, according to top sites rankings, being found after a google search. Having accessed these news, through use of a translation tool, the section also provides an English version of the news titles and their short summaries as they are published in the original source in the Dutch language.
 
 2. METHODS
+
 2.1. Tools
 The project uses Python as the primary language for all implementations, and uses the following libraries: 
 •	Python’s threading module with the Timer() class for automatically updating the data and repeating all procedures
